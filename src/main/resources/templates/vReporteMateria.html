@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+
+	<meta charset="UTF-8">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+
+	<title>Reporte Materias </title>
+
+</head>
+
+<body>
+
+	<h1>Reporte Materias </h1>
+	<table class="table table-dark table-striped-columns">
+	
+	  <thead>
+            <tr>
+                <th>
+                    <label>Nombre: </label>
+                </th>
+                <th>
+                    <label>Codigo: </label>
+                </th>
+                <th>
+                    <label>Descripcion: </label>
+                </th>
+                <th>
+                    <label>Numero de Creditos: </label>
+                </th>
+                
+                 <th>
+                    <label>Numero de Estudiantes: </label>
+                </th>
+            </tr>
+        </thead>
+			<tr th:each="reporte:${reporteTodo}">
+                <td th:text="${reporte.nombre}"></td>
+                <td th:text="${reporte.codigo}"></td>
+                <td th:text="${reporte.descripcion}"></td>
+                <td th:text="${reporte.numeroCreditos}"></td>
+                 <td th:text="${reporte.numeroEstudiantes}"></td>
+            </tr>
+
+	</table>
+</body>
+</html>
